@@ -1,0 +1,45 @@
+EDGE INFERENCE ATTACK EXPERIMENT CONFIGURATION (UNSUPERVISED)
+======================================================================
+
+Dataset Information:
+  Name:            Pubmed
+  Nodes:           3000
+  Edges:           14094
+  Features:        500
+  Classes:         3
+
+Experimental Configuration:
+  Number of Runs per Config:  10
+  Epsilon Values:             [0.01, 0.1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  Total Configurations:       1 baseline + 34 DP
+  GCN Training Epochs:        500
+  GCN Model:                  2-layer GCN (hidden=64)
+
+Adversary Model (threat model):
+  - Observes ONLY the published graph G' = DP(G) and node features
+  - Trains a GCN on G' and extracts embeddings from it
+  - Knows NO real edge: no supervised classifier is trained
+  - The original graph G is used ONLY by the evaluator to measure
+    AUC-ROC / AP; the adversary never accesses it
+
+Attack Pipeline:
+  1. Perturb the full graph with edge-DP (or no DP for baseline)
+  2. Train GCN on the published graph G'
+  3. Extract GCN embeddings from G'
+  4. Build evaluation universe of pairs (deduplicated negatives,
+     sampled without replacement) + ground truth from G
+  5. Compute link-prediction scores on G' (CN, Jaccard, AA, RA, PA,
+     embedding cosine) -- one independent attack per score
+  6. Measure AUC-ROC and Average Precision of each score vs ground truth
+
+Scores (each is an independent unsupervised attack):
+  - common_neighbors, jaccard, adamic_adar, resource_allocation,
+    preferential_attachment   (structural heuristics on G')
+  - embedding_cosine          (cosine similarity of GCN embeddings)
+
+Notes:
+  - DP mechanisms perturb the FULL edge set of the graph
+  - Negatives are sampled WITHOUT replacement and deduplicated, so the
+    evaluation universe contains no repeated pairs
+  - No train/test split and no classifier: nothing to leak by construction
+  - Average Precision must be read against the reported prevalence

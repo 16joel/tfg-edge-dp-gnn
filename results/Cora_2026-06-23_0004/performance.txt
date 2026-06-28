@@ -1,0 +1,22 @@
+======================================================================
+PERFORMANCE & RESOURCE USAGE
+======================================================================
+
+Dataset:                      Cora
+Timestamp:                    2026-06-23 00:04:31
+Total wall-clock time:        848.6 s
+Peak RAM (RSS):               650.9 MB
+
+Training time (per run, mean)
+----------------------------------------------------------------------
+  Baseline (no DP):           1.233 s
+  Under DP:                   2.221 s
+
+Privacy cost (per run, mean)
+----------------------------------------------------------------------
+  DP perturbation time:       0.230 s
+  Extra training time:        0.988 s
+  Total privacy overhead:     1.218 s
+  Overhead vs baseline:       98.7%
+
+  Total DP perturbation time (all runs): 78.2 s

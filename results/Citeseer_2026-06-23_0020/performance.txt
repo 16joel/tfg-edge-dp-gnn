@@ -1,0 +1,22 @@
+======================================================================
+PERFORMANCE & RESOURCE USAGE
+======================================================================
+
+Dataset:                      Citeseer
+Timestamp:                    2026-06-23 00:20:36
+Total wall-clock time:        964.2 s
+Peak RAM (RSS):               927.3 MB
+
+Training time (per run, mean)
+----------------------------------------------------------------------
+  Baseline (no DP):           1.565 s
+  Under DP:                   2.445 s
+
+Privacy cost (per run, mean)
+----------------------------------------------------------------------
+  DP perturbation time:       0.333 s
+  Extra training time:        0.880 s
+  Total privacy overhead:     1.213 s
+  Overhead vs baseline:       77.5%
+
+  Total DP perturbation time (all runs): 113.3 s

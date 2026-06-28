@@ -1,0 +1,43 @@
+# ============================================================================
+# Dependencies for: Edge Differential Privacy on Graph Neural Networks
+# ============================================================================
+# Python 3.10+ recommended.
+# Install with:  pip install -r requirements.txt
+#
+# Note on PyTorch Geometric: modern versions (>=2.3) no longer require the
+# separate torch-scatter / torch-sparse packages for the functionality used
+# in this project (GCNConv on CPU), so they are intentionally omitted.
+# ============================================================================
+
+# Core deep-learning framework
+torch>=2.0.0,<3.0.0
+
+# Graph neural networks (datasets, GCNConv, Data structures)
+torch-geometric>=2.3.0,<3.0.0
+
+# Numerics
+numpy>=1.24.0,<3.0.0
+
+# Metrics (roc_auc_score, average_precision_score, accuracy_score) and
+# utilities used in the utility experiments and the inference attack
+scikit-learn>=1.3.0,<2.0.0
+
+# Paired statistical tests (Wilcoxon signed-rank) in utils/statistical_tests.py.
+# scikit-learn already pulls scipy transitively, but it is declared explicitly
+# here because the statistical-tests module imports scipy.stats directly.
+scipy>=1.10.0,<2.0.0
+
+# Figure generation (generate_figures.py)
+matplotlib>=3.7.0
+
+# Performance monitoring (utils/perf_monitor.py): peak RAM measurement.
+# On Linux/macOS the standard-library 'resource' module is used and psutil is
+# NOT required. On Windows, install psutil so RAM can be measured; otherwise
+# the peak RAM field is reported as 'N/A' and nothing else breaks.
+psutil>=5.9.0 ; platform_system == "Windows"
+
+# ----------------------------------------------------------------------------
+# Optional: GPU support
+# The code runs on CPU by default. For CUDA, install the matching torch build
+# from https://pytorch.org/get-started/locally/ instead of the CPU wheel.
+# ----------------------------------------------------------------------------

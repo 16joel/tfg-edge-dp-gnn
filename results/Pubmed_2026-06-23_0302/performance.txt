@@ -1,0 +1,22 @@
+======================================================================
+PERFORMANCE & RESOURCE USAGE
+======================================================================
+
+Dataset:                      Pubmed
+Timestamp:                    2026-06-23 03:02:14
+Total wall-clock time:        9696.9 s
+Peak RAM (RSS):               8209.8 MB
+
+Training time (per run, mean)
+----------------------------------------------------------------------
+  Baseline (no DP):           7.074 s
+  Under DP:                   11.987 s
+
+Privacy cost (per run, mean)
+----------------------------------------------------------------------
+  DP perturbation time:       16.273 s
+  Extra training time:        4.913 s
+  Total privacy overhead:     21.185 s
+  Overhead vs baseline:       299.5%
+
+  Total DP perturbation time (all runs): 5532.7 s

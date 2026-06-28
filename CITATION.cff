@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Si utilitzeu aquest programari o els seus resultats, cited-lo tal com s'indica a continuació."
+title: "Privadesa diferencial a nivell d'aresta en xarxes neuronals de grafs: compromís entre privadesa i utilitat"
+abstract: >-
+  Codi i resultats del Treball de Fi de Grau que estudia empíricament el
+  compromís entre privadesa i utilitat d'aplicar privadesa diferencial a nivell
+  d'aresta (edge-DP) sobre l'entrada d'una xarxa neuronal de grafs (GCN), i la
+  protecció efectiva davant d'un atac d'inferència d'arestes de caixa negra.
+type: software
+authors:
+  - family-names: "Clemente Arroyo"
+    given-names: "Joel"
+    email: "Joel.Clemente@autonoma.cat"
+    affiliation: "Universitat Autònoma de Barcelona (UAB), Escola d'Enginyeria"
+date-released: "2026-06"
+year: 2026
+license: MIT
+keywords:
+  - "differential privacy"
+  - "edge-DP"
+  - "graph neural networks"
+  - "privacy-utility trade-off"
+  - "randomized response"
+  - "edge-inference attack"
+# Quan publiquis el repositori, descomenta i posa-hi la URL real:
+# repository-code: "https://github.com/EL_TEU_USUARI/EL_TEU_REPO"

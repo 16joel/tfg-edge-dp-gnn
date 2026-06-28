@@ -1,0 +1,36 @@
+EXPERIMENT CONFIGURATION & DATASET INFORMATION
+============================================================
+
+Dataset Information:
+  Name:            Citeseer
+  Nodes:           3327
+  Edges:           9104
+  Features:        3703
+  Classes:         6
+
+Experimental Configuration:
+  Number of Runs:  10
+  Training Epochs: 500
+  Model:           GCN (2 layers)
+  Hidden Dims:     64
+  Optimizer:       Adam (lr=0.01)
+
+Methods Evaluated:
+  1. Baseline (no DP)
+  2. Edge DP Randomized Response
+  3. Edge DP Laplace Mechanism
+
+Privacy Configuration:
+  Budget split:    1% of epsilon for density perturbation (epsilon1), 99% for structural perturbation (epsilon2)
+
+Evaluation Scenarios (DP runs):
+  S1: train/val/eval on perturbed graph
+  S2: train/val on perturbed graph, eval on original graph
+  S3: train on perturbed graph, val/eval on original graph
+
+Notes:
+  - DP mechanisms perturb the FULL edge set of the graph
+  - Node features, labels and masks are never perturbed
+  - Fixed dataset split across all runs
+  - Early stopping based on validation accuracy (dual
+    trackers: perturbed-val for S1/S2, original-val for S3)

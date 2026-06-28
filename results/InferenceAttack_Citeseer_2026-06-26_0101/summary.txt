@@ -1,0 +1,414 @@
+========================================================================================
+EDGE INFERENCE ATTACK AGAINST EDGE DIFFERENTIAL PRIVACY (UNSUPERVISED)
+========================================================================================
+
+EXPERIMENT METADATA
+----------------------------------------------------------------------------------------
+Dataset:              Cora
+Task:                 Edge Inference Attack (unsupervised, score-based)
+Adversary Model:      Black-box, NO knowledge of any real edge
+                      (observes only the published graph G' + GCN embeddings)
+Timestamp:            2026-06-26 01:43:57
+Attack scores:        CN, Jaccard, Adamic-Adar, Resource Allocation,
+                      Preferential Attachment, embedding cosine
+Epsilon Values:       [0.01, 0.1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+BASELINE RESULTS (No DP)
+----------------------------------------------------------------------------------------
+Baseline (no DP)  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.7026±0.000      0.2758±0.002
+jaccard                    0.7024±0.000      0.2228±0.003
+adamic_adar                0.7028±0.000      0.3324±0.002
+resource_allocation        0.7028±0.000      0.3301±0.002
+preferential_attachment    0.7782±0.000      0.1051±0.001
+embedding_cosine           0.9902±0.001      0.7762±0.016
+
+RESULTS FOR EACH EPSILON (Mean +/- Std Dev across runs)
+----------------------------------------------------------------------------------------
+
+EPSILON = 0.01
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5002±0.001      0.0099±0.000
+jaccard                    0.5003±0.001      0.0099±0.000
+adamic_adar                0.5003±0.001      0.0099±0.000
+resource_allocation        0.5003±0.001      0.0099±0.000
+preferential_attachment    0.4979±0.003      0.0099±0.000
+embedding_cosine           0.6997±0.161      0.0605±0.061
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5003±0.001      0.0099±0.000
+jaccard                    0.5003±0.001      0.0099±0.000
+adamic_adar                0.5003±0.001      0.0099±0.000
+resource_allocation        0.5003±0.001      0.0099±0.000
+preferential_attachment    0.4977±0.003      0.0098±0.000
+embedding_cosine           0.6997±0.160      0.0597±0.060
+
+
+EPSILON = 0.10
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5000±0.000      0.0099±0.000
+jaccard                    0.5000±0.000      0.0099±0.000
+adamic_adar                0.5000±0.000      0.0099±0.000
+resource_allocation        0.5000±0.000      0.0099±0.000
+preferential_attachment    0.4970±0.011      0.0098±0.000
+embedding_cosine           0.6321±0.056      0.0178±0.010
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5000±0.000      0.0099±0.000
+jaccard                    0.5000±0.000      0.0099±0.000
+adamic_adar                0.5000±0.000      0.0099±0.000
+resource_allocation        0.5000±0.000      0.0099±0.000
+preferential_attachment    0.4960±0.011      0.0098±0.000
+embedding_cosine           0.6304±0.057      0.0178±0.010
+
+
+EPSILON = 1.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5000±0.000      0.0099±0.000
+jaccard                    0.5000±0.000      0.0099±0.000
+adamic_adar                0.5000±0.000      0.0099±0.000
+resource_allocation        0.5000±0.000      0.0099±0.000
+preferential_attachment    0.4982±0.010      0.0099±0.000
+embedding_cosine           0.6183±0.011      0.0147±0.001
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5000±0.000      0.0099±0.000
+jaccard                    0.5000±0.000      0.0099±0.000
+adamic_adar                0.5000±0.000      0.0099±0.000
+resource_allocation        0.5000±0.000      0.0099±0.000
+preferential_attachment    0.4977±0.010      0.0099±0.000
+embedding_cosine           0.6193±0.011      0.0149±0.001
+
+
+EPSILON = 2.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5000±0.000      0.0099±0.000
+jaccard                    0.5000±0.000      0.0099±0.000
+adamic_adar                0.5000±0.000      0.0099±0.000
+resource_allocation        0.5000±0.000      0.0099±0.000
+preferential_attachment    0.5022±0.010      0.0100±0.000
+embedding_cosine           0.6226±0.013      0.0152±0.001
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5001±0.000      0.0099±0.000
+jaccard                    0.5001±0.000      0.0099±0.000
+adamic_adar                0.5001±0.000      0.0099±0.000
+resource_allocation        0.5001±0.000      0.0099±0.000
+preferential_attachment    0.5017±0.011      0.0100±0.000
+embedding_cosine           0.6214±0.008      0.0151±0.001
+
+
+EPSILON = 3.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5001±0.000      0.0099±0.000
+jaccard                    0.5001±0.000      0.0099±0.000
+adamic_adar                0.5001±0.000      0.0099±0.000
+resource_allocation        0.5001±0.000      0.0099±0.000
+preferential_attachment    0.5111±0.010      0.0103±0.000
+embedding_cosine           0.6302±0.010      0.0163±0.001
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5001±0.000      0.0099±0.000
+jaccard                    0.5001±0.000      0.0099±0.000
+adamic_adar                0.5001±0.000      0.0099±0.000
+resource_allocation        0.5001±0.000      0.0099±0.000
+preferential_attachment    0.5114±0.009      0.0104±0.000
+embedding_cosine           0.6327±0.009      0.0165±0.001
+
+
+EPSILON = 4.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5008±0.001      0.0099±0.000
+jaccard                    0.5008±0.001      0.0099±0.000
+adamic_adar                0.5008±0.001      0.0099±0.000
+resource_allocation        0.5008±0.001      0.0099±0.000
+preferential_attachment    0.5297±0.008      0.0113±0.001
+embedding_cosine           0.6546±0.010      0.0208±0.001
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5008±0.000      0.0099±0.000
+jaccard                    0.5008±0.000      0.0099±0.000
+adamic_adar                0.5008±0.000      0.0099±0.000
+resource_allocation        0.5008±0.000      0.0099±0.000
+preferential_attachment    0.5307±0.009      0.0117±0.001
+embedding_cosine           0.6532±0.009      0.0205±0.002
+
+
+EPSILON = 5.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5045±0.001      0.0104±0.000
+jaccard                    0.5044±0.001      0.0102±0.000
+adamic_adar                0.5045±0.001      0.0103±0.000
+resource_allocation        0.5045±0.001      0.0103±0.000
+preferential_attachment    0.5708±0.007      0.0170±0.002
+embedding_cosine           0.7024±0.010      0.0398±0.005
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5045±0.001      0.0104±0.000
+jaccard                    0.5045±0.001      0.0102±0.000
+adamic_adar                0.5045±0.001      0.0103±0.000
+resource_allocation        0.5045±0.001      0.0103±0.000
+preferential_attachment    0.5711±0.008      0.0167±0.002
+embedding_cosine           0.7020±0.012      0.0400±0.009
+
+
+EPSILON = 6.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5206±0.002      0.0177±0.001
+jaccard                    0.5206±0.002      0.0145±0.001
+adamic_adar                0.5206±0.002      0.0159±0.001
+resource_allocation        0.5206±0.002      0.0158±0.001
+preferential_attachment    0.6304±0.007      0.0352±0.003
+embedding_cosine           0.7870±0.010      0.1081±0.022
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5212±0.002      0.0183±0.002
+jaccard                    0.5212±0.002      0.0148±0.001
+adamic_adar                0.5212±0.002      0.0168±0.001
+resource_allocation        0.5212±0.002      0.0164±0.001
+preferential_attachment    0.6293±0.005      0.0359±0.002
+embedding_cosine           0.7865±0.008      0.1111±0.019
+
+
+EPSILON = 7.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5680±0.004      0.0676±0.005
+jaccard                    0.5679±0.004      0.0471±0.003
+adamic_adar                0.5680±0.004      0.0642±0.005
+resource_allocation        0.5680±0.004      0.0606±0.004
+preferential_attachment    0.6908±0.005      0.0621±0.003
+embedding_cosine           0.8842±0.006      0.2738±0.028
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.5645±0.002      0.0636±0.003
+jaccard                    0.5644±0.002      0.0443±0.001
+adamic_adar                0.5645±0.002      0.0612±0.002
+resource_allocation        0.5645±0.002      0.0577±0.002
+preferential_attachment    0.6875±0.003      0.0624±0.002
+embedding_cosine           0.8814±0.007      0.2612±0.033
+
+
+EPSILON = 8.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6275±0.004      0.1547±0.006
+jaccard                    0.6274±0.004      0.1154±0.004
+adamic_adar                0.6276±0.004      0.1691±0.006
+resource_allocation        0.6276±0.004      0.1612±0.005
+preferential_attachment    0.7324±0.003      0.0838±0.002
+embedding_cosine           0.9476±0.004      0.4725±0.033
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6192±0.003      0.1422±0.006
+jaccard                    0.6191±0.003      0.1056±0.004
+adamic_adar                0.6192±0.003      0.1544±0.006
+resource_allocation        0.6192±0.003      0.1468±0.005
+preferential_attachment    0.7278±0.003      0.0818±0.002
+embedding_cosine           0.9417±0.004      0.4396±0.038
+
+
+EPSILON = 9.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6681±0.003      0.2195±0.005
+jaccard                    0.6680±0.003      0.1729±0.005
+adamic_adar                0.6683±0.003      0.2546±0.005
+resource_allocation        0.6683±0.003      0.2477±0.006
+preferential_attachment    0.7581±0.002      0.0956±0.002
+embedding_cosine           0.9745±0.003      0.6228±0.030
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6537±0.004      0.1961±0.007
+jaccard                    0.6536±0.004      0.1520±0.005
+adamic_adar                0.6538±0.004      0.2250±0.006
+resource_allocation        0.6538±0.004      0.2173±0.005
+preferential_attachment    0.7485±0.002      0.0922±0.002
+embedding_cosine           0.9660±0.002      0.5626±0.016
+
+
+EPSILON = 10.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6892±0.002      0.2537±0.004
+jaccard                    0.6890±0.002      0.2031±0.004
+adamic_adar                0.6894±0.002      0.3020±0.003
+resource_allocation        0.6894±0.002      0.2977±0.003
+preferential_attachment    0.7702±0.001      0.1016±0.002
+embedding_cosine           0.9843±0.002      0.7097±0.027
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6737±0.002      0.2280±0.005
+jaccard                    0.6735±0.002      0.1803±0.004
+adamic_adar                0.6739±0.002      0.2667±0.005
+resource_allocation        0.6738±0.002      0.2604±0.005
+preferential_attachment    0.7602±0.001      0.0977±0.002
+embedding_cosine           0.9774±0.002      0.6476±0.021
+
+
+EPSILON = 11.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6971±0.001      0.2671±0.004
+jaccard                    0.6969±0.001      0.2150±0.004
+adamic_adar                0.6973±0.001      0.3199±0.004
+resource_allocation        0.6973±0.001      0.3168±0.003
+preferential_attachment    0.7752±0.001      0.1040±0.002
+embedding_cosine           0.9878±0.001      0.7470±0.013
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6859±0.001      0.2481±0.002
+jaccard                    0.6858±0.001      0.1976±0.003
+adamic_adar                0.6861±0.001      0.2939±0.003
+resource_allocation        0.6861±0.001      0.2890±0.003
+preferential_attachment    0.7672±0.001      0.1006±0.002
+embedding_cosine           0.9823±0.001      0.6871±0.011
+
+
+EPSILON = 12.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.7005±0.000      0.2725±0.002
+jaccard                    0.7003±0.000      0.2202±0.003
+adamic_adar                0.7007±0.000      0.3277±0.002
+resource_allocation        0.7007±0.000      0.3253±0.002
+preferential_attachment    0.7770±0.000      0.1048±0.001
+embedding_cosine           0.9886±0.002      0.7571±0.023
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6927±0.001      0.2593±0.002
+jaccard                    0.6925±0.001      0.2081±0.003
+adamic_adar                0.6929±0.001      0.3092±0.002
+resource_allocation        0.6929±0.001      0.3053±0.003
+preferential_attachment    0.7715±0.001      0.1025±0.002
+embedding_cosine           0.9861±0.001      0.7238±0.017
+
+
+EPSILON = 13.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.7018±0.000      0.2746±0.002
+jaccard                    0.7017±0.000      0.2219±0.003
+adamic_adar                0.7021±0.000      0.3308±0.002
+resource_allocation        0.7021±0.000      0.3286±0.002
+preferential_attachment    0.7778±0.000      0.1050±0.001
+embedding_cosine           0.9892±0.001      0.7641±0.018
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6970±0.001      0.2664±0.002
+jaccard                    0.6968±0.001      0.2146±0.003
+adamic_adar                0.6972±0.001      0.3194±0.002
+resource_allocation        0.6972±0.001      0.3163±0.002
+preferential_attachment    0.7741±0.001      0.1035±0.001
+embedding_cosine           0.9874±0.001      0.7403±0.018
+
+
+EPSILON = 14.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.7024±0.000      0.2754±0.002
+jaccard                    0.7022±0.000      0.2224±0.003
+adamic_adar                0.7026±0.000      0.3318±0.002
+resource_allocation        0.7026±0.000      0.3295±0.002
+preferential_attachment    0.7781±0.000      0.1050±0.001
+embedding_cosine           0.9901±0.001      0.7754±0.020
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.6995±0.001      0.2705±0.003
+jaccard                    0.6993±0.001      0.2181±0.004
+adamic_adar                0.6997±0.001      0.3251±0.002
+resource_allocation        0.6997±0.001      0.3224±0.002
+preferential_attachment    0.7758±0.001      0.1040±0.001
+embedding_cosine           0.9882±0.001      0.7515±0.018
+
+
+EPSILON = 15.00
+  RR  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.7025±0.000      0.2757±0.002
+jaccard                    0.7023±0.000      0.2226±0.003
+adamic_adar                0.7027±0.000      0.3322±0.002
+resource_allocation        0.7027±0.000      0.3299±0.002
+preferential_attachment    0.7782±0.000      0.1051±0.001
+embedding_cosine           0.9895±0.001      0.7675±0.018
+
+  Laplace  (random-AP baseline ~ prevalence = 0.0099)
+Score                      AUC-ROC              Avg Precision       
+------------------------------------------------------------------
+common_neighbors           0.7007±0.001      0.2728±0.003
+jaccard                    0.7005±0.001      0.2201±0.004
+adamic_adar                0.7010±0.001      0.3280±0.002
+resource_allocation        0.7010±0.001      0.3254±0.002
+preferential_attachment    0.7767±0.000      0.1045±0.001
+embedding_cosine           0.9886±0.002      0.7559±0.025
+
+
+========================================================================================
+INTERPRETATION
+----------------------------------------------------------------------------------------
+AUC-ROC = 0.50  -> perfect privacy (attacker no better than random)
+AUC-ROC = 1.00  -> complete edge-privacy breach
+Average Precision must be compared to the per-configuration prevalence
+(a random attack achieves AP ~ prevalence).
+Each score is an INDEPENDENT attack; no classifier is trained, so the
+adversary never accesses any ground-truth edge.
+========================================================================================
