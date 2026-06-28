@@ -54,7 +54,6 @@ Codi/
 ├── requirements.txt         # Dependències
 ├── README.md                # Aquest fitxer
 ├── REPRODUCIBILITAT.md      # Mecanismes de reproductibilitat
-├── CHANGELOG.md             # Llista de canvis del treball (evolució i decisions)
 ├── LICENSE                  # Llicència MIT
 ├── CITATION.cff             # Metadades de citació (botó "Cite this repository")
 ├── dp_mechanisms/
